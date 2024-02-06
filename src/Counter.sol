@@ -1,14 +1,17 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+pragma solidity 0.8.17;
+
+import {console} from "forge-std/console.sol";
 
 contract Counter {
-    uint256 public number;
+    uint256 public number = 0;
 
-    function setNumber(uint256 newNumber) public {
-        number = newNumber;
+    function inc() public {
+        console.log("inc() called", number);
+        number++;
     }
 
-    function increment() public {
-        number++;
+    function dec() public {
+        number--;
     }
 }
